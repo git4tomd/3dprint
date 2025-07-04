@@ -1,0 +1,150 @@
+{
+    "bed_custom_model": "/home/tomd/Desktop/Orca-Marathon/Printer Textures & Models/STL_Marathon_BED_Mono_Dual.stl",
+    "bed_custom_texture": "/home/tomd/Desktop/Orca-Marathon/Printer Textures & Models/Texture_printbed_marathon-MONO_Dual.png",
+    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE - Start\n;Layer#=[layer_num] - Z=[layer_z]\n; Set extruder position back to 0\n;G92 E0\nG1 E-.0001\n;BEFORE_LAYER_CHANGE - End",
+    "change_extrusion_role_gcode": ";CHANGE_EXTRUSION_ROLE - Start\n;CHANGE_EXTRUSION_ROLE - End",
+    "change_filament_gcode": ";CHANGE_FILAMENT - Start\n;Layer#=[layer_num] - Z=[layer_z]\nG1 E-.0001\n; Set all coordinates to relative positioning\nG91\n; Increase Z (i.e. move bed down) a bit\nG1 Z+0.5 F1200\n; Set all coordinates to absolute positioning\nG90\n; Activate next toolhead\n{if layer_num != -1 || next_extruder != 0}\n  T{next_extruder}\n{endif}\n; <----\n; Move to the current layer's Z height\nG1 Z[layer_z] F1200\n; Wait for next extruder to reach the correct nozzle temp based on current layer\n{if layer_num == -1 || layer_num == 0}\n  M109 S[nozzle_temperature_initial_layer[next_extruder]] T[next_extruder]\n{else}\n  M109 S[nozzle_temperature[next_extruder]] T[next_extruder]\n{endif}\n; ---->\n; Setting extruder to use relative distances since that's what Orca sets between the \"Machine start G-code\" and the \"Change filemant G-code\"\nM83\nG1 E.0001\n;Layer#=[layer_num] - Z=[layer_z]\n;CHANGE_FILAMENT - End",
+    "cooling_tube_length": "0",
+    "cooling_tube_retraction": "0",
+    "deretraction_speed": [
+        "20",
+        "20"
+    ],
+    "emit_machine_limits_to_gcode": "0",
+    "enable_filament_ramming": "0",
+    "extra_loading_move": "0",
+    "extruder_colour": [
+        "#FCE94F",
+        "#FCE94F"
+    ],
+    "extruder_offset": [
+        "0x0",
+        "0x0"
+    ],
+    "from": "User",
+    "inherits": "MyKlipper 0.4 nozzle",
+    "is_custom_defined": "0",
+    "layer_change_gcode": ";AFTER_LAYER_CHANGE - Start\n;Layer#=[layer_num] - Z=[layer_z]\n;AFTER_LAYER_CHANGE - End",
+    "long_retractions_when_cut": [
+        "0",
+        "0"
+    ],
+    "machine_end_gcode": ";MACHINE_END - Start\nend_print\n;MACHINE_END - End",
+    "machine_max_acceleration_extruding": [
+        "15000",
+        "20000"
+    ],
+    "machine_max_acceleration_retracting": [
+        "1500",
+        "5000"
+    ],
+    "machine_max_acceleration_x": [
+        "8000",
+        "20000"
+    ],
+    "machine_max_acceleration_y": [
+        "15000",
+        "20000"
+    ],
+    "machine_pause_gcode": ";PAUSE - Start\nPAUSE\n;PAUSE - End",
+    "machine_start_gcode": ";MACHINE_START - Start\n; Bed heats slower so start heating it to first layer temp immediately\nM140 S{first_layer_bed_temperature[initial_tool]}\n; Heat hotends to 60C below first layer temp to prevent oozing during start_print\nM104 S{first_layer_temperature[0] - 60} T0\nM104 S{first_layer_temperature[1] - 60} T1\n; Wait for bed to reach first layer temp\nM190 S{first_layer_bed_temperature[initial_tool]}\n; Pause to wait for bed temperature to stabilize before start_print\n; Shortened the wait to 15s - should check with Dan whether the 60s wait is based on actual testing or estimation\n;G4 P60000 ; Original wait time - seems excessive\nG4 P15000 ; New wait time\n; Run start_print macro defined in Klipper (located in Marathon_Macros.cfg)\nstart_print\n; Set all coordinates to absolute positioning - unnecessary since brush_T0 sets this\n;G90\n; Start heating hotends\nM104 S{first_layer_temperature[0]} T0\nM104 S{first_layer_temperature[1]} T1\n; Dwell for 5s to let hotends heat up a bit before brushing\nG4 P5000\n; Clean nozzles on the brushes\nbrush_T0\nbrush_T1\n; Wait for hotends to reach printing temps\nM109 S{first_layer_temperature[0]} T0\nM109 S{first_layer_temperature[1]} T1\n;T1 ; Not necessary since T1 was activated in brush_T1\n; Adjusting Z offset for build plate type\n{if curr_bed_type != \"Textured PEI Plate\"}\n  SET_GCODE_OFFSET Z_ADJUST=0.295\n{endif}\n; <----\n; Extrude purge line using a 0.28 layer height\nG1 X280.1 Y2.0 Z0.28 F5000.0 \nG1 X100.1 Y2.0 Z0.28 F1500.0 E15 \nG1 X100.1 Y2.4 Z0.28 F5000.0 \nG1 X280.1 Y2.4 Z0.28 F1500.0 E30\n; ---->\n; <----\n; Need to test if this is neccessary for T1 like it is for T0\n; If T1 isn't the first toolhead used do the following to account for the \"Retraction when switching material\" in Printer settings > Extruder - needed to avoid a huge blob when toolhead is first used\n{if initial_tool != 1}\n  ; Set extruder position back to 0 - since we're in absolute positioning mode this needs to be done before the \n  G92 E0\n  ; Retract using the Length set for \"Retraction when switching material\"\n  G1 E-{retract_length_toolchange[1]}\n{endif}\n; ---->\n; Set extruder position back to 0 - probably unnecessary since Orca is set to use relative extrusion distances\nG92 E0\n; Set bed height to 5 - disabled because it causes stringing\n;G1 Z5.0 F3000\nT0\n; <----\n; Extrude purge line using a 0.28 layer height\nG1 X100 Y1.0 Z0.28 F5000.0 \nG1 X280 Y1.0 Z0.28 F1500.0 E15 \nG1 X280 Y1.4 Z0.28 F5000.0 \nG1 X100 Y1.4 Z0.28 F1500.0 E30 \n; ---->\n; <----\n; If T0 isn't the first toolhead used do the following to account for the \"Retraction when switching material\" in Printer settings > Extruder - needed to avoid a huge blob when toolhead is first used\n{if initial_tool != 0}\n  ; Set extruder position back to 0 - since we're in absolute positioning mode this needs to be done before the retraction\n  G92 E0\n  ; Retract using the Length set for \"Retraction when switching material\"\n  G1 E-{retract_length_toolchange[0]}\n{endif}\n; ---->\n; Set bed height to 5 - disabled because it causes stringing\n;G1 Z5.0 F3000\n;MACHINE_START - End",
+    "max_layer_height": [
+        "0.32",
+        "0.32"
+    ],
+    "min_layer_height": [
+        "0.08",
+        "0.08"
+    ],
+    "name": "Marathon_Dual",
+    "nozzle_diameter": [
+        "0.4",
+        "0.4"
+    ],
+    "nozzle_height": "4",
+    "nozzle_type": "hardened_steel",
+    "parking_pos_retraction": "0",
+    "print_host": "192.168.68.123",
+    "printable_area": [
+        "23x-4",
+        "413x-4",
+        "413x300",
+        "23x300"
+    ],
+    "printable_height": "290",
+    "printer_settings_id": "Marathon_Dual",
+    "printing_by_object_gcode": ";PRINTING_BY_OBJECT - Start\n;PRINTING_BY_OBJECT - End",
+    "retract_before_wipe": [
+        "70%",
+        "70%"
+    ],
+    "retract_length_toolchange": [
+        "2",
+        "2"
+    ],
+    "retract_lift_above": [
+        "0",
+        "0"
+    ],
+    "retract_lift_below": [
+        "289",
+        "289"
+    ],
+    "retract_lift_enforce": [
+        "All Surfaces",
+        "All Surfaces"
+    ],
+    "retract_restart_extra": [
+        "0",
+        "0"
+    ],
+    "retract_restart_extra_toolchange": [
+        "0",
+        "0"
+    ],
+    "retract_when_changing_layer": [
+        "1",
+        "1"
+    ],
+    "retraction_distances_when_cut": [
+        "18",
+        "18"
+    ],
+    "retraction_length": [
+        "2",
+        "2"
+    ],
+    "retraction_minimum_travel": [
+        "3",
+        "3"
+    ],
+    "retraction_speed": [
+        "20",
+        "20"
+    ],
+    "single_extruder_multi_material": "0",
+    "support_multi_bed_types": "1",
+    "thumbnails": "64x64/PNG, 400x300/PNG",
+    "time_lapse_gcode": ";TIME_LAPSE - Start\n;TIME_LAPSE - End",
+    "travel_slope": [
+        "3",
+        "3"
+    ],
+    "version": "1.6.0.0",
+    "wipe": [
+        "1",
+        "1"
+    ],
+    "wipe_distance": [
+        "1",
+        "1"
+    ],
+    "z_hop": [
+        "0.4",
+        "0.4"
+    ],
+    "z_hop_types": [
+        "Slope Lift",
+        "Slope Lift"
+    ]
+}

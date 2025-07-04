@@ -1,0 +1,46 @@
+{
+    "eng_plate_temp": [
+        "50"
+    ],
+    "eng_plate_temp_initial_layer": [
+        "50"
+    ],
+    "filament_density": [
+        "1.17"
+    ],
+    "filament_flow_ratio": [
+        "0.95"
+    ],
+    "filament_settings_id": [
+        "Qidi - PA6-CF20 - Fiberon"
+    ],
+    "filament_type": [
+        "PA6-CF"
+    ],
+    "filament_vendor": [
+        "Fiberon"
+    ],
+    "from": "User",
+    "hot_plate_temp": [
+        "50"
+    ],
+    "hot_plate_temp_initial_layer": [
+        "50"
+    ],
+    "inherits": "Qidi Generic PA-CF",
+    "is_custom_defined": "0",
+    "name": "Qidi - PA6-CF20 - Fiberon",
+    "nozzle_temperature": [
+        "280"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "280"
+    ],
+    "textured_plate_temp": [
+        "50"
+    ],
+    "textured_plate_temp_initial_layer": [
+        "50"
+    ],
+    "version": "2.2.0.4"
+}

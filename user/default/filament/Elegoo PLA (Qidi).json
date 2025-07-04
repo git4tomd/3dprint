@@ -1,0 +1,40 @@
+{
+    "fan_cooling_layer_time": [
+        "0"
+    ],
+    "fan_min_speed": [
+        "80"
+    ],
+    "filament_density": [
+        "1.2"
+    ],
+    "filament_flow_ratio": [
+        "1"
+    ],
+    "filament_settings_id": [
+        "Elegoo PLA (Qidi)"
+    ],
+    "from": "User",
+    "hot_plate_temp": [
+        "55"
+    ],
+    "hot_plate_temp_initial_layer": [
+        "55"
+    ],
+    "inherits": "Qidi Generic PLA",
+    "is_custom_defined": "0",
+    "name": "Elegoo PLA (Qidi)",
+    "nozzle_temperature": [
+        "210"
+    ],
+    "nozzle_temperature_range_high": [
+        "220"
+    ],
+    "textured_plate_temp": [
+        "55"
+    ],
+    "textured_plate_temp_initial_layer": [
+        "55"
+    ],
+    "version": "2.1.1.0"
+}

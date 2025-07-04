@@ -1,0 +1,12 @@
+{
+    "from": "User",
+    "host_type": "crealityprint",
+    "inherits": "Creality Ender-3 V3 KE 0.4 nozzle",
+    "is_custom_defined": "0",
+    "manual_filament_change": "0",
+    "name": "Creality Ender-3 V3 KE",
+    "print_host": "192.168.68.144",
+    "printer_settings_id": "Creality Ender-3 V3 KE",
+    "support_multi_bed_types": "1",
+    "version": "2.2.0.4"
+}

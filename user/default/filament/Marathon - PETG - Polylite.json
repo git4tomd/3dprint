@@ -1,0 +1,49 @@
+{
+    "default_filament_colour": [
+        "#FFFFFF"
+    ],
+    "enable_pressure_advance": [
+        "1"
+    ],
+    "filament_cost": [
+        "14.99"
+    ],
+    "filament_minimal_purge_on_wipe_tower": [
+        "5"
+    ],
+    "filament_settings_id": [
+        "Marathon - PETG - Polylite"
+    ],
+    "filament_start_gcode": [
+        "; filament start gcode\nM141 S38 ; Start Chanber fan at 38 Deg"
+    ],
+    "filament_vendor": [
+        "Polylite"
+    ],
+    "from": "User",
+    "hot_plate_temp": [
+        "70"
+    ],
+    "hot_plate_temp_initial_layer": [
+        "70"
+    ],
+    "inherits": "My Generic PETG",
+    "is_custom_defined": "0",
+    "name": "Marathon - PETG - Polylite",
+    "nozzle_temperature": [
+        "265"
+    ],
+    "pressure_advance": [
+        "0.027"
+    ],
+    "slow_down_layer_time": [
+        "0"
+    ],
+    "textured_plate_temp": [
+        "70"
+    ],
+    "textured_plate_temp_initial_layer": [
+        "70"
+    ],
+    "version": "1.6.0.0"
+}

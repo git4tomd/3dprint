@@ -1,0 +1,49 @@
+{
+    "default_filament_colour": [
+        "#9A9996"
+    ],
+    "enable_pressure_advance": [
+        "1"
+    ],
+    "filament_settings_id": [
+        "Marathon - HIPS - Gizmodorks"
+    ],
+    "filament_type": [
+        "HIPS"
+    ],
+    "filament_vendor": [
+        "Gizmodorks"
+    ],
+    "from": "User",
+    "hot_plate_temp": [
+        "110"
+    ],
+    "hot_plate_temp_initial_layer": [
+        "110"
+    ],
+    "inherits": "My Generic ABS",
+    "is_custom_defined": "0",
+    "name": "Marathon - HIPS - Gizmodorks",
+    "nozzle_temperature": [
+        "250"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "250"
+    ],
+    "nozzle_temperature_range_high": [
+        "250"
+    ],
+    "nozzle_temperature_range_low": [
+        "230"
+    ],
+    "pressure_advance": [
+        "0.032"
+    ],
+    "textured_plate_temp": [
+        "110"
+    ],
+    "textured_plate_temp_initial_layer": [
+        "110"
+    ],
+    "version": "2.2.0.4"
+}

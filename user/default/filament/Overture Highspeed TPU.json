@@ -1,0 +1,25 @@
+{
+    "filament_cost": [
+        "31"
+    ],
+    "filament_settings_id": [
+        "Overture Highspeed TPU"
+    ],
+    "from": "User",
+    "hot_plate_temp": [
+        "40"
+    ],
+    "hot_plate_temp_initial_layer": [
+        "40"
+    ],
+    "inherits": "Qidi Generic TPU 95A",
+    "is_custom_defined": "0",
+    "name": "Overture Highspeed TPU",
+    "textured_plate_temp": [
+        "40"
+    ],
+    "textured_plate_temp_initial_layer": [
+        "40"
+    ],
+    "version": "2.1.1.0"
+}

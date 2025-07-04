@@ -1,0 +1,13 @@
+{
+    "filament_settings_id": [
+        "Qidi - PLA - generic"
+    ],
+    "from": "User",
+    "inherits": "Qidi Generic PLA",
+    "is_custom_defined": "0",
+    "name": "Qidi - PLA - generic",
+    "nozzle_temperature_initial_layer": [
+        "220"
+    ],
+    "version": "2.2.0.4"
+}

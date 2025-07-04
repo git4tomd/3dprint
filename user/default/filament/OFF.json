@@ -1,0 +1,46 @@
+{
+    "filament_density": [
+        "1.21"
+    ],
+    "filament_flow_ratio": [
+        "0.97"
+    ],
+    "filament_max_volumetric_speed": [
+        "18"
+    ],
+    "filament_minimal_purge_on_wipe_tower": [
+        "5"
+    ],
+    "filament_settings_id": [
+        "OFF"
+    ],
+    "filament_start_gcode": [
+        "; Filament gcode\nM141 S25 ; Start Chanber fan at 25 Deg"
+    ],
+    "from": "User",
+    "inherits": "My Generic PLA",
+    "is_custom_defined": "0",
+    "name": "OFF",
+    "nozzle_temperature": [
+        "0"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "0"
+    ],
+    "nozzle_temperature_range_high": [
+        "220"
+    ],
+    "nozzle_temperature_range_low": [
+        "0"
+    ],
+    "temperature_vitrification": [
+        "64"
+    ],
+    "textured_plate_temp": [
+        "55"
+    ],
+    "textured_plate_temp_initial_layer": [
+        "55"
+    ],
+    "version": "1.6.1.0"
+}

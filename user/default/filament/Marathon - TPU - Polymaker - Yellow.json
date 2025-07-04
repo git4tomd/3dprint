@@ -1,0 +1,118 @@
+{
+    "cool_plate_temp": [
+        "0"
+    ],
+    "cool_plate_temp_initial_layer": [
+        "0"
+    ],
+    "default_filament_colour": [
+        "#FFFF00"
+    ],
+    "during_print_exhaust_fan_speed": [
+        "100"
+    ],
+    "eng_plate_temp": [
+        "50"
+    ],
+    "eng_plate_temp_initial_layer": [
+        "50"
+    ],
+    "fan_min_speed": [
+        "80"
+    ],
+    "filament_cooling_final_speed": [
+        "2"
+    ],
+    "filament_cooling_initial_speed": [
+        "3"
+    ],
+    "filament_cooling_moves": [
+        "1"
+    ],
+    "filament_cost": [
+        "90"
+    ],
+    "filament_density": [
+        "1.22"
+    ],
+    "filament_end_gcode": [
+        "; FILAMENT_END - Start\n; FILAMENT_END - End"
+    ],
+    "filament_flow_ratio": [
+        "1.05"
+    ],
+    "filament_loading_speed": [
+        "14"
+    ],
+    "filament_loading_speed_start": [
+        "19"
+    ],
+    "filament_max_volumetric_speed": [
+        "2"
+    ],
+    "filament_minimal_purge_on_wipe_tower": [
+        "0"
+    ],
+    "filament_retraction_length": [
+        "2"
+    ],
+    "filament_settings_id": [
+        "Marathon - TPU - Polymaker - Yellow"
+    ],
+    "filament_start_gcode": [
+        "; FILAMENT_START - Start\nM141 S30 ; Start Chamber fan at 30 Deg\n; FILAMENT_START - End"
+    ],
+    "filament_type": [
+        "TPU"
+    ],
+    "filament_unloading_speed": [
+        "20"
+    ],
+    "filament_vendor": [
+        "Polymaker"
+    ],
+    "filament_z_hop": [
+        "0.2"
+    ],
+    "filament_z_hop_types": [
+        "Slope Lift"
+    ],
+    "from": "User",
+    "hot_plate_temp": [
+        "35"
+    ],
+    "hot_plate_temp_initial_layer": [
+        "35"
+    ],
+    "inherits": "My Generic PLA",
+    "is_custom_defined": "0",
+    "name": "Marathon - TPU - Polymaker - Yellow",
+    "nozzle_temperature": [
+        "235"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "235"
+    ],
+    "nozzle_temperature_range_high": [
+        "250"
+    ],
+    "nozzle_temperature_range_low": [
+        "215"
+    ],
+    "pressure_advance": [
+        "0.04"
+    ],
+    "slow_down_layer_time": [
+        "10"
+    ],
+    "slow_down_min_speed": [
+        "15"
+    ],
+    "textured_plate_temp": [
+        "35"
+    ],
+    "textured_plate_temp_initial_layer": [
+        "35"
+    ],
+    "version": "2.1.0.1"
+}

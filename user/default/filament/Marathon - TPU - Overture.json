@@ -1,0 +1,28 @@
+{
+    "default_filament_colour": [
+        "#DEDDDA"
+    ],
+    "filament_density": [
+        "1.19"
+    ],
+    "filament_max_volumetric_speed": [
+        "8"
+    ],
+    "filament_settings_id": [
+        "Marathon - TPU - Overture"
+    ],
+    "from": "User",
+    "inherits": "My Generic TPU",
+    "is_custom_defined": "0",
+    "name": "Marathon - TPU - Overture",
+    "nozzle_temperature": [
+        "230"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "235"
+    ],
+    "slow_down_layer_time": [
+        "0"
+    ],
+    "version": "2.2.0.4"
+}

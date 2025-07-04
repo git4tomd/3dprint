@@ -1,0 +1,67 @@
+{
+    "default_filament_colour": [
+        "#F9F06B"
+    ],
+    "filament_cost": [
+        "60"
+    ],
+    "filament_density": [
+        "1.13"
+    ],
+    "filament_flow_ratio": [
+        "0.97"
+    ],
+    "filament_is_support": [
+        "1"
+    ],
+    "filament_max_volumetric_speed": [
+        "6"
+    ],
+    "filament_minimal_purge_on_wipe_tower": [
+        "5"
+    ],
+    "filament_settings_id": [
+        "Marathon - Polydissolve S1 - Polymaker "
+    ],
+    "filament_start_gcode": [
+        "; Filament gcode\nM141 S25 ; Start Chanber fan at 25 Deg"
+    ],
+    "filament_type": [
+        "PVA"
+    ],
+    "filament_vendor": [
+        "Polymaker"
+    ],
+    "from": "User",
+    "hot_plate_temp": [
+        "50"
+    ],
+    "hot_plate_temp_initial_layer": [
+        "50"
+    ],
+    "inherits": "My Generic PLA",
+    "is_custom_defined": "0",
+    "name": "Marathon - Polydissolve S1 - Polymaker ",
+    "nozzle_temperature": [
+        "225"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "235"
+    ],
+    "nozzle_temperature_range_high": [
+        "225"
+    ],
+    "nozzle_temperature_range_low": [
+        "215"
+    ],
+    "temperature_vitrification": [
+        "64"
+    ],
+    "textured_plate_temp": [
+        "50"
+    ],
+    "textured_plate_temp_initial_layer": [
+        "50"
+    ],
+    "version": "1.6.1.0"
+}

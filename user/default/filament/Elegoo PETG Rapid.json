@@ -1,0 +1,25 @@
+{
+    "filament_cost": [
+        "14"
+    ],
+    "filament_density": [
+        "1.26"
+    ],
+    "filament_settings_id": [
+        "Elegoo PETG Rapid"
+    ],
+    "filament_vendor": [
+        "Elegoo"
+    ],
+    "from": "User",
+    "inherits": "QIDI PETG Tough",
+    "is_custom_defined": "0",
+    "name": "Elegoo PETG Rapid",
+    "nozzle_temperature_initial_layer": [
+        "250"
+    ],
+    "pressure_advance": [
+        "0.086"
+    ],
+    "version": "2.2.0.1"
+}

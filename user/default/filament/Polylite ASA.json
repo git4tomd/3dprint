@@ -1,0 +1,58 @@
+{
+    "close_fan_the_first_x_layers": [
+        "1000"
+    ],
+    "default_filament_colour": [
+        "#FFFFFF"
+    ],
+    "filament_cost": [
+        "30"
+    ],
+    "filament_density": [
+        "1.13"
+    ],
+    "filament_settings_id": [
+        "Polylite ASA"
+    ],
+    "filament_type": [
+        "ASA"
+    ],
+    "filament_vendor": [
+        "Polymaker"
+    ],
+    "from": "User",
+    "hot_plate_temp": [
+        "85"
+    ],
+    "hot_plate_temp_initial_layer": [
+        "85"
+    ],
+    "inherits": "Anycubic PLA @Anycubic Kobra 2 Pro 0.4 nozzle",
+    "is_custom_defined": "0",
+    "name": "Polylite ASA",
+    "nozzle_temperature": [
+        "245"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "245"
+    ],
+    "nozzle_temperature_range_high": [
+        "260"
+    ],
+    "nozzle_temperature_range_low": [
+        "230"
+    ],
+    "reduce_fan_stop_start_freq": [
+        "0"
+    ],
+    "temperature_vitrification": [
+        "105"
+    ],
+    "textured_plate_temp": [
+        "85"
+    ],
+    "textured_plate_temp_initial_layer": [
+        "85"
+    ],
+    "version": "2.2.0.4"
+}

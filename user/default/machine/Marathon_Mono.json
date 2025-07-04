@@ -1,0 +1,75 @@
+{
+    "bed_custom_model": "/home/tomd/Desktop/Orca-Marathon/Printer Textures & Models/STL_Marathon_BED_Mono_Dual.stl",
+    "bed_custom_texture": "/home/tomd/Desktop/Orca-Marathon/Printer Textures & Models/Texture_printbed_marathon-MONO_Dual.png",
+    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE - Start\n;Layer#=[layer_num] - Z=[layer_z]\n; Set extruder position back to 0\n;G92 E0\n;G1 E-.0001\n;BEFORE_LAYER_CHANGE - End\n",
+    "change_extrusion_role_gcode": ";CHANGE_EXTRUSION_ROLE - Start\n;CHANGE_EXTRUSION_ROLE - End\n",
+    "change_filament_gcode": ";CHANGE_FILAMENT - Start\n;Layer#=[layer_num] - Z=[layer_z]\n;G1 E-.0001\n; I'm honestly not sure why any of the below code is in the Mono profile unless it's for people using the wrong profile but, if that's the case, then there are other issues that also need to be addressed\n; Set all coordinates to relative positioning\n;G91\n; Increase Z (i.e. move bed down) a bit\n;G1 Z+0.5 F1200\n; Set all coordinates to absolute positioning\n;G90\n; Activate next toolhead\n;T{next_extruder}\n; <----\n; Wait for next extruder to reach the correct nozzle temp based on current layer\n;{if layer_num==0}\n;  M109 S[nozzle_temperature_initial_layer[next_extruder]] T[next_extruder]\n;{else}\n;  M109 S[nozzle_temperature[next_extruder]] T[next_extruder]\n;{endif}\n; ---->\n;Layer#=[layer_num] - Z=[layer_z]\n;CHANGE_FILAMENT - End\n",
+    "cooling_tube_length": "0",
+    "cooling_tube_retraction": "0",
+    "deretraction_speed": [
+        "0"
+    ],
+    "emit_machine_limits_to_gcode": "0",
+    "enable_filament_ramming": "0",
+    "extra_loading_move": "0",
+    "from": "User",
+    "inherits": "MyKlipper 0.4 nozzle",
+    "is_custom_defined": "0",
+    "layer_change_gcode": ";AFTER_LAYER_CHANGE - Start\n;Layer#=[layer_num] - Z=[layer_z]\n; I'm honestly not sure why any of the below code is necessary since the unused toolhead's fan should have never turned on\n; <----\n; Turn off unused extruder's part fan\n{if current_extruder==0}\nSET_FAN_SPEED FAN=Tool_1_partfan SPEED=0.0\n{else}\nSET_FAN_SPEED FAN=Tool_0_partfan SPEED=0.0\n{endif}\n; ---->\n;AFTER_LAYER_CHANGE - End\n",
+    "machine_end_gcode": ";MACHINE_END - Start\nend_print\n;MACHINE_END - End\n",
+    "machine_max_acceleration_extruding": [
+        "15000",
+        "20000"
+    ],
+    "machine_max_acceleration_x": [
+        "15000",
+        "20000"
+    ],
+    "machine_max_acceleration_y": [
+        "15000",
+        "20000"
+    ],
+    "machine_pause_gcode": ";PAUSE - Start\nPAUSE\n;PAUSE - End\n",
+    "machine_start_gcode": ";MACHINE_START - Start\n; Bed heats slower so start heating it to first layer temp immediately\nM140 S{first_layer_bed_temperature[initial_tool]}\n; Heat hotend to 60C below first layer temp to prevent oozing during start_print\nM104 S{first_layer_temperature[initial_tool] - 60} T[initial_tool]\n; Wait for bed to reach first layer temp\nM190 S{first_layer_bed_temperature[initial_tool]}\n; Pause to wait for bed temperature to stabilize before start_print\n; Shortened the wait to 15s - should check with Dan whether the 60s wait is based on actual testing or estimation\n;G4 P60000 ; Original wait time - seems excessive\nG4 P15000 ; New wait time\n; Run start_print macro defined in Klipper (located in Marathon_Macros.cfg)\nstart_print\n; Activate initial toolhead\nT[initial_tool]\n; Set all coordinates to absolute positioning - unnecessary since brush_T0 sets this\n;G90\n; Start heating hotend\nM104 S{first_layer_temperature[initial_tool]} T[initial_tool]\n; Dwell for 5s to let hotends heat up a bit before brushing\nG4 P5000\n; Clean nozzle on the brushes\nbrush_T[initial_tool]\n; Wait for hotend to reach printing temp\nM109 S{first_layer_temperature[initial_tool]} T[initial_tool]\n; Adjusting Z offset for build plate type\n{if curr_bed_type != \"Textured PEI Plate\"}\n  SET_GCODE_OFFSET Z_ADJUST=0.295\n{endif}\n; <----\n; Extrude purge line using a 0.28 layer height\nG1 X100 Y1.0 Z0.28 F5000.0 \nG1 X280 Y1.0 Z0.28 F1500.0 E15 \nG1 X280 Y1.4 Z0.28 F5000.0 \nG1 X100 Y1.4 Z0.28 F1500.0 E30\n; ---->\n; Set extruder position back to 0 - probably unnecessary since Orca is set to use relative extrusion distances\nG92 E0\n; Set bed height to 5 - disabled because it causes stringing\n;G1 Z5.0 F3000\n;MACHINE_START - End\n",
+    "name": "Marathon_Mono",
+    "nozzle_height": "4",
+    "nozzle_type": "hardened_steel",
+    "parking_pos_retraction": "0",
+    "print_host": "192.168.68.123",
+    "printable_area": [
+        "23x-4",
+        "413x-4",
+        "413x300",
+        "23x300"
+    ],
+    "printable_height": "290",
+    "printer_settings_id": "Marathon_Mono",
+    "printing_by_object_gcode": ";PRINTING_BY_OBJECT - Start\n;PRINTING_BY_OBJECT - End\n",
+    "purge_in_prime_tower": "0",
+    "retract_before_wipe": [
+        "50%"
+    ],
+    "retract_lift_below": [
+        "289"
+    ],
+    "retract_when_changing_layer": [
+        "0"
+    ],
+    "retraction_length": [
+        "2"
+    ],
+    "retraction_minimum_travel": [
+        "3"
+    ],
+    "retraction_speed": [
+        "20"
+    ],
+    "single_extruder_multi_material": "0",
+    "support_multi_bed_types": "1",
+    "thumbnails": "64x64/PNG, 400x300/PNG",
+    "time_lapse_gcode": ";TIME_LAPSE - Start\n;TIME_LAPSE - End\n",
+    "version": "1.6.0.0",
+    "z_hop_types": [
+        "Slope Lift"
+    ]
+}

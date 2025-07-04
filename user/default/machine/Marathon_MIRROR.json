@@ -1,0 +1,130 @@
+{
+    "bed_custom_model": "/home/tomd/Desktop/Orca-Marathon/Printer Textures & Models/STL_Marathon_BED_Mirror.stl",
+    "bed_custom_texture": "/home/tomd/Desktop/Orca-Marathon/Printer Textures & Models/Texture_printbed_marathon_MIRROR_Slicer.png",
+    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE - Start\n;[layer_z]\n; Set extruder position back to 0\nG92 E0\n;BEFORE_LAYER_CHANGE - End",
+    "cooling_tube_length": "0",
+    "cooling_tube_retraction": "0",
+    "deretraction_speed": [
+        "0",
+        "0"
+    ],
+    "emit_machine_limits_to_gcode": "0",
+    "enable_filament_ramming": "0",
+    "extra_loading_move": "0",
+    "extruder_colour": [
+        "#FCE94F",
+        "#FCE94F"
+    ],
+    "extruder_offset": [
+        "0x0",
+        "0x0"
+    ],
+    "from": "User",
+    "inherits": "MyKlipper 0.4 nozzle",
+    "is_custom_defined": "0",
+    "layer_change_gcode": ";AFTER_LAYER_CHANGE - Start\n;[layer_z]\n; Restoring the dual_carriage state saved in MACHINE_START\nRESTORE_DUAL_CARRIAGE_STATE NAME=DCS0 MOVE=0\n;AFTER_LAYER_CHANGE - ",
+    "long_retractions_when_cut": [
+        "0",
+        "0"
+    ],
+    "machine_end_gcode": ";MACHINE_END - Start\nend_print\n;MACHINE_END - End",
+    "machine_pause_gcode": ";PAUSE - Start\nPAUSE\n;PAUSE - End",
+    "machine_start_gcode": ";MACHINE_START - Start\n; Bed heats slower so start heating it to first layer temp immediately\nM140 S{first_layer_bed_temperature[initial_tool]}\n; Heat hotends to 60C below first layer temp to prevent oozing during start_print\nM104 S{first_layer_temperature[0] - 60} T0\nM104 S{first_layer_temperature[1] - 60} T1\n; Wait for bed to reach first layer temp\nM190 S{first_layer_bed_temperature[initial_tool]}\n; Pause to wait for bed temperature to stabilize before start_print\n; I'd like to shorten the wait to 15s - should check with Dan whether the 60s wait is based on actual testing or estimation\n;G4 P60000 ; Original wait time - seems excessive\nG4 P15000 ; New wait time\n; Run start_print macro defined in Klipper (located in Marathon_Macros.cfg)\nstart_print\n; Set all coordinates to absolute positioning - unnecessary since brush_T0 sets this\n;G90\n; Start heating hotends\nM104 S{first_layer_temperature[0]} T0\nM104 S{first_layer_temperature[1]} T1\n; Dwell for 5s to let hotends heat up a bit before brushing\nG4 P5000\n; Clean nozzles on the brushes - reversed the order so T0 is done second to avoid having to activate T0 implicitly\nbrush_T1\nbrush_T0\n; Wait for hotends to reach printing temps\nM109 S{first_layer_temperature[0]} T0\nM109 S{first_layer_temperature[1]} T1\n; Activate initial tool - switched brushing order so this is unnecessary\n;T0\n; Moving Y to 1 before activating mirror mode to avoid the screw in the center-rear of the bed\nG1 Y1.0 F5000.0 \n; Activate mirror mode using Klipper macro (defined in printer.cfg)\nACTIVATE_MIRROR_MODE\n; Set bed height to 22\n; I'm not sure why this is 22 instead of 5 like the other Marathon profiles\nG1 Z22.0 F3000 \n; Adjusting Z offset for build plate type\n{if curr_bed_type != \"Textured PEI Plate\"}\n  SET_GCODE_OFFSET Z_ADJUST=0.295\n{endif}\n; <----\n; Extrude purge line using a 0.28 layer height\nG1 X25 Y1.0 Z0.28 F5000.0 \nG1 X168 Y1.0 Z0.28 F1500.0 E15 \nG1 X168 Y1.4 Z0.28 F5000.0 \nG1 X25 Y1.4 Z0.28 F1500.0 E30 \n; ---->\n; Set extruder position back to 0\nG92 E0\n; Set bed height to 5 - disabled because it causes stringing\n;G1 Z5.0 F3000\n; Saving the current dual_carriage state to restore in AFTER_LAYER_CHANGE\nSAVE_DUAL_CARRIAGE_STATE NAME=DCS0\n;MACHINE_START - End",
+    "max_layer_height": [
+        "0.3",
+        "0.3"
+    ],
+    "min_layer_height": [
+        "0.0375",
+        "0.0375"
+    ],
+    "name": "Marathon_MIRROR",
+    "nozzle_diameter": [
+        "0.4",
+        "0.4"
+    ],
+    "nozzle_type": "hardened_steel",
+    "parking_pos_retraction": "0",
+    "print_host": "192.168.68.123",
+    "printable_area": [
+        "23x-4",
+        "181x-4",
+        "181x300",
+        "23x300"
+    ],
+    "printable_height": "290",
+    "printer_settings_id": "Marathon_MIRROR",
+    "purge_in_prime_tower": "0",
+    "retract_before_wipe": [
+        "70%",
+        "70%"
+    ],
+    "retract_length_toolchange": [
+        "2",
+        "2"
+    ],
+    "retract_lift_above": [
+        "0",
+        "0"
+    ],
+    "retract_lift_below": [
+        "289",
+        "289"
+    ],
+    "retract_lift_enforce": [
+        "All Surfaces",
+        "All Surfaces"
+    ],
+    "retract_restart_extra": [
+        "0",
+        "0"
+    ],
+    "retract_restart_extra_toolchange": [
+        "0",
+        "0"
+    ],
+    "retract_when_changing_layer": [
+        "0",
+        "0"
+    ],
+    "retraction_distances_when_cut": [
+        "18",
+        "18"
+    ],
+    "retraction_length": [
+        "1.35",
+        "1.35"
+    ],
+    "retraction_minimum_travel": [
+        "3",
+        "3"
+    ],
+    "retraction_speed": [
+        "120",
+        "120"
+    ],
+    "single_extruder_multi_material": "0",
+    "support_multi_bed_types": "1",
+    "thumbnails": "64x64/PNG, 400x300/PNG",
+    "travel_slope": [
+        "3",
+        "3"
+    ],
+    "version": "1.6.0.0",
+    "wipe": [
+        "1",
+        "1"
+    ],
+    "wipe_distance": [
+        "1",
+        "1"
+    ],
+    "z_hop": [
+        "0.5",
+        "0.5"
+    ],
+    "z_hop_types": [
+        "Normal Lift",
+        "Normal Lift"
+    ]
+}

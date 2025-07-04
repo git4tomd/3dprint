@@ -1,0 +1,52 @@
+{
+    "close_fan_the_first_x_layers": [
+        "1000"
+    ],
+    "default_filament_colour": [
+        "#241F31"
+    ],
+    "enable_overhang_bridge_fan": [
+        "0"
+    ],
+    "fan_max_speed": [
+        "0"
+    ],
+    "filament_cost": [
+        "100"
+    ],
+    "filament_density": [
+        "1.17"
+    ],
+    "filament_settings_id": [
+        "Marathon - PA6-CF20 - Polymaker"
+    ],
+    "filament_vendor": [
+        "Polymaker"
+    ],
+    "from": "User",
+    "hot_plate_temp": [
+        "50"
+    ],
+    "hot_plate_temp_initial_layer": [
+        "50"
+    ],
+    "inherits": "My Generic PA-CF",
+    "is_custom_defined": "0",
+    "name": "Marathon - PA6-CF20 - Polymaker",
+    "nozzle_temperature": [
+        "300"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "300"
+    ],
+    "nozzle_temperature_range_low": [
+        "280"
+    ],
+    "textured_plate_temp": [
+        "50"
+    ],
+    "textured_plate_temp_initial_layer": [
+        "50"
+    ],
+    "version": "2.2.0.4"
+}

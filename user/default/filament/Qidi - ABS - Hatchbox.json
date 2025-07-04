@@ -1,0 +1,79 @@
+{
+    "default_filament_colour": [
+        "#F6F5F4"
+    ],
+    "dont_slow_down_outer_wall": [
+        "0"
+    ],
+    "fan_cooling_layer_time": [
+        "30"
+    ],
+    "fan_max_speed": [
+        "80"
+    ],
+    "filament_cost": [
+        "23"
+    ],
+    "filament_flow_ratio": [
+        "0.89"
+    ],
+    "filament_max_volumetric_speed": [
+        "18.5"
+    ],
+    "filament_retraction_length": [
+        "1"
+    ],
+    "filament_retraction_speed": [
+        "40"
+    ],
+    "filament_settings_id": [
+        "Qidi - ABS - Hatchbox"
+    ],
+    "filament_type": [
+        "ABS"
+    ],
+    "filament_vendor": [
+        "Polymaker"
+    ],
+    "from": "User",
+    "hot_plate_temp": [
+        "95"
+    ],
+    "hot_plate_temp_initial_layer": [
+        "95"
+    ],
+    "inherits": "Qidi Generic ASA",
+    "is_custom_defined": "0",
+    "name": "Qidi - ABS - Hatchbox",
+    "nozzle_temperature": [
+        "255"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "255"
+    ],
+    "nozzle_temperature_range_high": [
+        "240"
+    ],
+    "nozzle_temperature_range_low": [
+        "210"
+    ],
+    "overhang_fan_speed": [
+        "70"
+    ],
+    "pressure_advance": [
+        "0.032"
+    ],
+    "slow_down_layer_time": [
+        "0"
+    ],
+    "slow_down_min_speed": [
+        "10"
+    ],
+    "textured_plate_temp": [
+        "95"
+    ],
+    "textured_plate_temp_initial_layer": [
+        "95"
+    ],
+    "version": "2.2.0.4"
+}

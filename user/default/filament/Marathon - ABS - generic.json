@@ -1,0 +1,25 @@
+{
+    "filament_max_volumetric_speed": [
+        "18"
+    ],
+    "filament_minimal_purge_on_wipe_tower": [
+        "5"
+    ],
+    "filament_settings_id": [
+        "Marathon - ABS - generic"
+    ],
+    "filament_start_gcode": [
+        "; Filament gcode\nM141 S45 ; Start Chanber fan at 45 Deg"
+    ],
+    "from": "User",
+    "inherits": "My Generic ABS",
+    "is_custom_defined": "0",
+    "name": "Marathon - ABS - generic",
+    "nozzle_temperature": [
+        "255"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "255"
+    ],
+    "version": "1.6.1.0"
+}

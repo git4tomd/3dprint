@@ -1,0 +1,31 @@
+{
+    "enable_pressure_advance": [
+        "1"
+    ],
+    "filament_flow_ratio": [
+        "0.99"
+    ],
+    "filament_settings_id": [
+        "Elegoo PLA"
+    ],
+    "from": "User",
+    "inherits": "Anycubic Generic PLA",
+    "is_custom_defined": "0",
+    "name": "Elegoo PLA",
+    "nozzle_temperature": [
+        "205"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "205"
+    ],
+    "pressure_advance": [
+        "0.05"
+    ],
+    "textured_plate_temp": [
+        "55"
+    ],
+    "textured_plate_temp_initial_layer": [
+        "55"
+    ],
+    "version": "2.1.1.0"
+}

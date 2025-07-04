@@ -1,0 +1,22 @@
+{
+    "filament_settings_id": [
+        "Elegoo Rapid PETG"
+    ],
+    "from": "User",
+    "inherits": "Anycubic Generic PETG",
+    "is_custom_defined": "0",
+    "name": "Elegoo Rapid PETG",
+    "nozzle_temperature": [
+        "245"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "245"
+    ],
+    "textured_plate_temp": [
+        "70"
+    ],
+    "textured_plate_temp_initial_layer": [
+        "75"
+    ],
+    "version": "2.1.1.0"
+}

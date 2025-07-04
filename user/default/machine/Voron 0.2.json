@@ -1,0 +1,16 @@
+{
+    "from": "User",
+    "inherits": "Voron 0.1 0.4 nozzle",
+    "is_custom_defined": "0",
+    "name": "Voron 0.2",
+    "print_host": "192.168.68.129",
+    "printable_area": [
+        "0x0",
+        "119x0",
+        "119x119",
+        "0x119"
+    ],
+    "printer_settings_id": "Voron 0.2",
+    "support_multi_bed_types": "1",
+    "version": "2.2.0.4"
+}

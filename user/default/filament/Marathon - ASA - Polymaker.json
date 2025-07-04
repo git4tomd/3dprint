@@ -1,0 +1,19 @@
+{
+    "filament_density": [
+        "1.13"
+    ],
+    "filament_settings_id": [
+        "Marathon - ASA - Polymaker"
+    ],
+    "from": "User",
+    "inherits": "My Generic ASA",
+    "is_custom_defined": "0",
+    "name": "Marathon - ASA - Polymaker",
+    "textured_plate_temp": [
+        "90"
+    ],
+    "textured_plate_temp_initial_layer": [
+        "90"
+    ],
+    "version": "2.2.0.4"
+}

@@ -1,0 +1,13 @@
+{
+    "from": "User",
+    "inherits": "Qidi X-Max 3 0.4 nozzle",
+    "is_custom_defined": "0",
+    "name": "Qidi X-Max 3",
+    "nozzle_type": "stainless_steel",
+    "print_host": "192.168.68.124",
+    "printable_height": "295",
+    "printer_settings_id": "Qidi X-Max 3",
+    "support_multi_bed_types": "1",
+    "thumbnails": "300x300/PNG, 96x96/PNG",
+    "version": "2.2.0.4"
+}

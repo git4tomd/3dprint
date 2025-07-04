@@ -1,0 +1,58 @@
+{
+    "close_fan_the_first_x_layers": [
+        "1000"
+    ],
+    "fan_cooling_layer_time": [
+        "1"
+    ],
+    "fan_max_speed": [
+        "0"
+    ],
+    "fan_min_speed": [
+        "0"
+    ],
+    "filament_cost": [
+        "30"
+    ],
+    "filament_retraction_length": [
+        "1"
+    ],
+    "filament_retraction_speed": [
+        "20"
+    ],
+    "filament_settings_id": [
+        "Polylite PC"
+    ],
+    "filament_vendor": [
+        "Polymaker"
+    ],
+    "from": "User",
+    "inherits": "Qidi Generic PC",
+    "is_custom_defined": "0",
+    "name": "Polylite PC",
+    "nozzle_temperature": [
+        "260"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "260"
+    ],
+    "nozzle_temperature_range_high": [
+        "270"
+    ],
+    "nozzle_temperature_range_low": [
+        "250"
+    ],
+    "overhang_fan_speed": [
+        "30"
+    ],
+    "reduce_fan_stop_start_freq": [
+        "0"
+    ],
+    "slow_down_for_layer_cooling": [
+        "0"
+    ],
+    "slow_down_layer_time": [
+        "1"
+    ],
+    "version": "2.2.0.1"
+}
